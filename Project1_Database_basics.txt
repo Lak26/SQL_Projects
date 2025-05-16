@@ -1,0 +1,19 @@
+USE StudentDB;
+
+DROP TABLE IF EXISTS Student;
+
+CREATE TABLE Student (
+     Stud_id INT PRIMARY KEY,
+	 Name VARCHAR(50),
+	 Age INT,
+	 Course VARCHAR(50),
+	 Admission_date DATE);
+
+INSERT INTO Student(Stud_id, Name, Age, Course, Admission_date) VALUES
+(1, 'Shaym Sharma', 20, 'B.Tech', '2022-08-01' ),
+(2, 'Aditya Kumar', 21, 'B.Sc', '2022-07-15'),
+(3, 'Neha Sharma', 19, 'BCA', '2022-01-10'),
+(4, 'Aman Verma', 22, 'B.Com', '2022-04-12');
+
+SELECT * FROM Student;
+
