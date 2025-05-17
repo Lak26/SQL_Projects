@@ -1,0 +1,51 @@
+--CREATE DATABASE Project2_EMS;
+--GO
+
+USE Project2_EMS;
+GO
+
+CREATE TABLE Departments 
+(
+      Dept_id INT PRIMARY KEY,
+      Dept_name VARCHAR(50) NOT NULL UNIQUE
+);
+
+CREATE TABLE Employees (
+       Emp_id INT PRIMARY KEY,
+	   Full_Name VARCHAR(60) NOT NULL,
+	   Age INT CHECK (Age>18),
+	   Gender CHAR(1) CHECK(GENDER IN ('M','F')),
+	   --This is a constraint that limits the values allowed in the "Gender" column to only the characters 'M' and 'F'. 
+	   Email VARCHAR(100) UNIQUE,
+	   Phone CHAR(10),
+	   Dept_id INT,
+	   Join_date DATE DEFAULT GETDATE(),
+	   --returns the current database system date and time
+	   FOREIGN KEY(Dept_id) REFERENCES Departments(Dept_id)
+
+);
+
+CREATE TABLE Projects(
+       Project_id INT PRIMARY KEY,
+	   Project_name VARCHAR(50),
+	   Dept_id INT
+	   FOREIGN KEY(Dept_id) REFERENCES Departments(Dept_id)
+);
+
+CREATE TABLE Salaries(
+       Emp_id INT PRIMARY KEY,
+	   Basic_Salary DECIMAL(10,2) CHECK(Basic_Salary > 0),
+	   Bonus DECIMAL(10,2),
+	   FOREIGN KEY(Emp_id) REFERENCES Employees(Emp_id)
+
+);
+
+CREATE TABLE Attendance(
+       Record_id INT PRIMARY KEY,
+       Emp_id INT,
+	   Date DATE DEFAULT GETDATE(),
+	   Status VARCHAR(50) CHECK(Status IN ('Present', 'Absent', 'Leave')),
+	   FOREIGN KEY(Emp_id) REFERENCES Employees(Emp_id)
+
+);
+
