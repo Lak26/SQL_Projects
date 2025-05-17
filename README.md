@@ -25,6 +25,7 @@ Hands-on use of SSMS for database development
 🔸 Title: Employee Management System (SQL)
 
 🔹 Tools Used: Microsoft SQL Server, SSMS
+
 🔹 Description:
 Designed a normalized relational database in SQL Server for an Employee Management System using real-world constraints and relationships.
 The schema includes departments, employees, projects, salaries, and attendance tracking. 
