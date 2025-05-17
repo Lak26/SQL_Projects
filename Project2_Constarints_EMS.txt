@@ -49,3 +49,30 @@ CREATE TABLE Attendance(
 
 );
 
+
+
+INSERT INTO Departments VALUES 
+(1, 'Human Resources'),
+(2, 'IT'),
+(3, 'Finance');
+
+INSERT INTO Employees (Emp_id, Full_Name, Age, Gender, Email, Phone, Dept_id)
+VALUES 
+(101, 'Riya Mehta', 25, 'F', 'riya@example.com', '9876543210', 2),
+(102, 'Arjun Singh', 28, 'M', 'arjun@example.com', '9876512345', 3);
+
+INSERT INTO Projects (Project_id, Project_name, Dept_id) VALUES
+(201, 'Payroll System', 3),
+(202, 'Employee Portal', 2),
+(203, 'Recruitment Drive', 1);
+
+INSERT INTO Salaries (Emp_id, Basic_Salary, Bonus) VALUES
+(101, 70000.00, 5000.00),
+(102, 80000.00, 6000.00);
+
+
+INSERT INTO Attendance (Record_id, Emp_id, Date, Status) VALUES
+(1, 101, '2024-09-01', 'Present'),
+(2, 101, '2024-09-02', 'Absent'),
+(3, 102, '2024-09-01', 'Leave'),
+(4, 102, '2024-09-02', 'Present');
