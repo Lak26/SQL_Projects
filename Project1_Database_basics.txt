@@ -10,10 +10,13 @@ CREATE TABLE Student (
 	 Admission_date DATE);
 
 INSERT INTO Student(Stud_id, Name, Age, Course, Admission_date) VALUES
-(1, 'Shaym Sharma', 20, 'B.Tech', '2022-08-01' ),
+(1, 'Shaym Sharma', 20, 'B.Tech', '2022-08-01' ), --YYYY-MM-DD
 (2, 'Aditya Kumar', 21, 'B.Sc', '2022-07-15'),
 (3, 'Neha Sharma', 19, 'BCA', '2022-01-10'),
 (4, 'Aman Verma', 22, 'B.Com', '2022-04-12');
 
 SELECT * FROM Student;
-
+SELECT Age FROM Student WHERE Age >= 20;
+SELECT * FROM Student ORDER BY Admission_date ASC;
+SELECT * FROM Student ORDER BY Admission_date DESC;
+--Any operation can be done with this table
